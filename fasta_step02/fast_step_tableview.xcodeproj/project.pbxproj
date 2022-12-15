@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		98D09B02294AEFA20019EDE9 /* fasta_step02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fasta_step02.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98D09B02294AEFA20019EDE9 /* fast_step_tableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fast_step_tableview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D09B05294AEFA20019EDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D09B07294AEFA20019EDE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		98D09B09294AEFA20019EDE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		98D09AF9294AEFA20019EDE9 = {
 			isa = PBXGroup;
 			children = (
-				98D09B04294AEFA20019EDE9 /* fasta_step02 */,
+				98D09B04294AEFA20019EDE9 /* fast_step_tableview */,
 				98D09B03294AEFA20019EDE9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		98D09B03294AEFA20019EDE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98D09B02294AEFA20019EDE9 /* fasta_step02.app */,
+				98D09B02294AEFA20019EDE9 /* fast_step_tableview.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		98D09B04294AEFA20019EDE9 /* fasta_step02 */ = {
+		98D09B04294AEFA20019EDE9 /* fast_step_tableview */ = {
 			isa = PBXGroup;
 			children = (
 				98D09B05294AEFA20019EDE9 /* AppDelegate.swift */,
@@ -64,15 +64,15 @@
 				98D09B10294AEFA20019EDE9 /* LaunchScreen.storyboard */,
 				98D09B13294AEFA20019EDE9 /* Info.plist */,
 			);
-			path = fasta_step02;
+			path = fast_step_tableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		98D09B01294AEFA20019EDE9 /* fasta_step02 */ = {
+		98D09B01294AEFA20019EDE9 /* fast_step_tableview */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98D09B16294AEFA20019EDE9 /* Build configuration list for PBXNativeTarget "fasta_step02" */;
+			buildConfigurationList = 98D09B16294AEFA20019EDE9 /* Build configuration list for PBXNativeTarget "fast_step_tableview" */;
 			buildPhases = (
 				98D09AFE294AEFA20019EDE9 /* Sources */,
 				98D09AFF294AEFA20019EDE9 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = fasta_step02;
+			name = fast_step_tableview;
 			productName = fasta_step02;
-			productReference = 98D09B02294AEFA20019EDE9 /* fasta_step02.app */;
+			productReference = 98D09B02294AEFA20019EDE9 /* fast_step_tableview.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 98D09AFD294AEFA20019EDE9 /* Build configuration list for PBXProject "fasta_step02" */;
+			buildConfigurationList = 98D09AFD294AEFA20019EDE9 /* Build configuration list for PBXProject "fast_step_tableview" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				98D09B01294AEFA20019EDE9 /* fasta_step02 */,
+				98D09B01294AEFA20019EDE9 /* fast_step_tableview */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98D09AFD294AEFA20019EDE9 /* Build configuration list for PBXProject "fasta_step02" */ = {
+		98D09AFD294AEFA20019EDE9 /* Build configuration list for PBXProject "fast_step_tableview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98D09B14294AEFA20019EDE9 /* Debug */,
@@ -348,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98D09B16294AEFA20019EDE9 /* Build configuration list for PBXNativeTarget "fasta_step02" */ = {
+		98D09B16294AEFA20019EDE9 /* Build configuration list for PBXNativeTarget "fast_step_tableview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98D09B17294AEFA20019EDE9 /* Debug */,
