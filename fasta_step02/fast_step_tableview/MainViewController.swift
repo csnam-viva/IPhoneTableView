@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource{
+extension MainViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
@@ -48,7 +48,7 @@ extension ViewController: UITableViewDataSource{
     }
     
 }
-extension ViewController: UITableViewDelegate{
+extension MainViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("section= \(indexPath.section)  row = \(indexPath.row)")
     }
