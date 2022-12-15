@@ -88,12 +88,24 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             task.resume()
         }
     }
+    func makeYesterDataString()->String{
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyy-MM-dd"
+        var data_string = formatter.string(from: Date())
+        print(data_string)
+        let date1 = Calendar.current.date(byAdding: .day, value: -1,to: Date())
+        var data_yesteray = formatter.string(from: date1!)
+        print("yeterdata \(data_yesteray)")
+        return data_yesteray
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         table.delegate = self
         table.dataSource = self
         getData();
+        var date1 = makeYesterDataString()
+        print(date1)
     }
     
     
