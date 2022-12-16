@@ -7,6 +7,30 @@
 
 import UIKit
 
+extension UIImage{
+    func resize(to targetSize: CGSize) -> UIImage?{
+        let size = self.size
+        let widthRatio = targetSize.width / size.width
+        let heightRatio = targetSize.height / size.height
+        var newSize: CGSize
+        if (widthRatio > heightRatio){
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        }
+        else {
+            newSize = CGSize(width: size.width*widthRatio, height: size.height * widthRatio )
+        }
+        let rect = CGRect(origin: .zero, size: newSize)
+        UIGraphicsBeginImageContextWithOptions(newSize, false,1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+            
+        
+            
+    }
+    
+}
 protocol  Filter{
     var name: String {get}
     func convert(_ image:UIImage)->UIImage
@@ -62,6 +86,7 @@ class FiterCell : UICollectionViewCell{
 class ViewController: UIViewController  {
     private var manager = FilterManager()
     private var  selectedIndex:Int?
+    private var selecedImage: UIImage = UIImage(named: "photo")!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var toolbar: UIToolbar!
@@ -102,7 +127,10 @@ extension ViewController: UIImagePickerControllerDelegate & UINavigationControll
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print("did finish")
         if let image = info[.originalImage] as? UIImage {
-            self.imageView.image = image
+            //self.imageView.image = image
+            let resizedImage = image.resize(to: CGSize(width: 800, height: 800))
+            self.selecedImage = resizedImage!
+            self.imageView.image = resizedImage
         }
     }
 }
@@ -131,9 +159,10 @@ extension ViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
         let filter = manager.list[index]
-        let image = imageView.image
+        //let image = imageView.image
         self.selectedIndex = index
-        self.imageView.image = filter.convert(image!)
+        //self.imageView.image = filter.convert(image!)
+        self.imageView.image = filter.convert(selecedImage)
         self.collectionView.reloadData()
         print("select \(index)")
     }
