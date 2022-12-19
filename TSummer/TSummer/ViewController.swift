@@ -90,11 +90,13 @@ class ViewController: UIViewController  {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var toolbar: UIToolbar!
+    @IBOutlet private weak var maskView: UIView!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //self.imageView.image = nil
+        self.maskView.isHidden = false
         self.toolbar.setShadowImage(UIImage(),forToolbarPosition: .bottom)
         self.toolbar.layer.shadowColor = UIColor.black.cgColor
         self.toolbar.layer.shadowRadius = 5
@@ -114,9 +116,30 @@ class ViewController: UIViewController  {
     }
     @IBAction func presentCamera(){
         print("camera")
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else{
+            print("camera not available")
+            return
+        }
+        let controller = UIImagePickerController()
+        controller.sourceType = .camera
+        controller.allowsEditing = true
+        controller.delegate = self
+        self.present(controller,animated: true,completion: nil)
     }
     @IBAction func saveImage(){
         print("saveImage")
+        guard let index = selectedIndex else{
+            return
+        }
+        let filter = manager.list[index]
+        let filterImage = filter.convert(selecedImage)
+        
+        UIImageWriteToSavedPhotosAlbum(filterImage, nil, nil, nil)
+        
+        let controller = UIAlertController(title: "image save 완료", message: "이미지를 성공적으로 저장", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default,handler: { action in
+                print("확인")
+        })
     }
 }
 extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate{
@@ -128,9 +151,16 @@ extension ViewController: UIImagePickerControllerDelegate & UINavigationControll
         print("did finish")
         if let image = info[.originalImage] as? UIImage {
             //self.imageView.image = image
-            let resizedImage = image.resize(to: CGSize(width: 800, height: 800))
-            self.selecedImage = resizedImage!
-            self.imageView.image = resizedImage
+            DispatchQueue.global().async {
+                let resizedImage = image.resize(to: CGSize(width: 800, height: 800))!
+                DispatchQueue.main.async {
+                    self.selecedImage = resizedImage
+                    self.imageView.image =  resizedImage
+                    self.maskView.isHidden = true
+                }
+            }
+            
+            
         }
     }
 }
