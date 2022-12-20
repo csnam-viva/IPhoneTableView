@@ -14,6 +14,7 @@
 		98E7175729503B79002FDE54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E7175529503B79002FDE54 /* LaunchScreen.storyboard */; };
 		98E7176529503DC6002FDE54 /* Medal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7176429503DC6002FDE54 /* Medal.swift */; };
 		98E717672950405C002FDE54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E717662950405C002FDE54 /* Main.storyboard */; };
+		98E7176929507C85002FDE54 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7176829507C85002FDE54 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		98E7175829503B79002FDE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98E7176429503DC6002FDE54 /* Medal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medal.swift; sourceTree = "<group>"; };
 		98E717662950405C002FDE54 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		98E7176829507C85002FDE54 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				98E7174A29503B78002FDE54 /* AppDelegate.swift */,
 				98E717662950405C002FDE54 /* Main.storyboard */,
+				98E7176829507C85002FDE54 /* StartViewController.swift */,
 				98E7174C29503B78002FDE54 /* SceneDelegate.swift */,
 				98E7174E29503B78002FDE54 /* ReadyViewController.swift */,
 				98E7175329503B79002FDE54 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E7176929507C85002FDE54 /* StartViewController.swift in Sources */,
 				98E7174F29503B78002FDE54 /* ReadyViewController.swift in Sources */,
 				98E7176529503DC6002FDE54 /* Medal.swift in Sources */,
 				98E7174B29503B78002FDE54 /* AppDelegate.swift in Sources */,

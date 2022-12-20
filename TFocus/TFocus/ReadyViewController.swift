@@ -76,7 +76,8 @@ class ReadyViewController: UIViewController {
         print("medal list")
     }
     @IBAction func start(){
-        print("start")
+        performSegue(withIdentifier: "start", sender: nil)
+        //print("start")
     }
     @IBAction func durationChange(){
         let medal = Medal(by: TimeInterval(slider.value))
@@ -85,9 +86,14 @@ class ReadyViewController: UIViewController {
         startButton.addShadow(with: currentMedal.color)
         imageView.image = medal.icon
         slider.tintColor = medal.color
-        
-        
-        
+                
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = segue.identifier
+        if identifier == "start" {
+            let controller = segue.destination as! StartViewController
+            controller.duration = Int( slider.value) * 60
+        }
     }
 
 
