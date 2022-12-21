@@ -51,6 +51,7 @@ class StartViewController: UIViewController{
         let minutes = seconds / 60
         let sec =  seconds % 60
         durationLabel.text = String(format: "%02d:%02d",minutes,sec)
+        progressWidth.constant = CGFloat(remaining) / CGFloat(duration) * progressContainer.frame.width
     }
     @objc func tick(){
         print("tick")
